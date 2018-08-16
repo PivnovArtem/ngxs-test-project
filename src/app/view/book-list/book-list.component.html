@@ -1,0 +1,12 @@
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425"></p-confirmDialog>
+
+
+<input #bookName type="text" placeholder="Book name">
+<button (click)="addBook(bookName.value); bookName.value = ''">Add book</button>
+
+<ul>
+  <li *ngFor="let book of (books$ | async)">
+    <span>{{book.name}} </span>
+    <button (click)="deleteBook(book.id)">Удалить</button>
+  </li>
+</ul>
